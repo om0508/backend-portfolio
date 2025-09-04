@@ -10,3 +10,5 @@ npm install
 
 # Start backend in background
 nohup node app.js > app.log 2>&1 &
+chmod +x restart_server.sh
+
