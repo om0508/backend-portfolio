@@ -3,8 +3,14 @@ os: linux
 files:
   - source: /
     destination: /home/ubuntu/backend
+
 hooks:
   AfterInstall:
-    - location: restart_server.sh
-      timeout: 300
+    - location: scripts/install.sh
+      runas: ubuntu
+  ApplicationStart:
+    - location: scripts/start.sh
+      runas: ubuntu
+  ApplicationStop:
+    - location: scripts/stop.sh
       runas: ubuntu
